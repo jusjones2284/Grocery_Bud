@@ -11,8 +11,8 @@ const App = () => {
       completed: false,
       id: nanoid(),
     };
-
-    setItems([...items, newItem])
+    setItems([...items, newItem]);
+    console.log(items);
 
   }
 
