@@ -1,8 +1,13 @@
 import React from 'react'
 
-const SingleItem = () => {
+const SingleItem = ({item, removeItems }) => {
   return (
-    <h2>SingleItem</h2>
+    <div className='single-item'>
+      <input type='checkbox'/>
+      <p>{item.name}</p>
+      <button></button>
+
+    </div>
   )
 }
 
