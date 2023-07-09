@@ -4,7 +4,7 @@ const SingleItem = ({name, completed, id, removeItem,editItem }) => {
   const [checked, setChecked] = useState(completed)
 
   return (
-    <div className='single-itme'>
+    <div className='single-item'>
       <input type='checkbox' 
               checked={checked}
               onChange={()=> editItem(id)}
