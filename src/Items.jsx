@@ -1,12 +1,16 @@
 import React from 'react'
 import SingleItem from './SingleItem'
 
-const Items = ({items, removeItems}) => {
-  console.log(items);
+const Items = ({items, removeItem, editItem }) => {
+
+
   return (
-    <div className='items'>
-      {items.map((item) => {
-        return <SingleItem item={item} removeItems={removeItems} key={item.id}/>
+    <div className="items">
+      {items.map((item)=>{
+        return <SingleItem removeItem={removeItem}
+        key={item.id}
+        {...item} editItem={editItem}
+        />
       })}
     </div>
   )

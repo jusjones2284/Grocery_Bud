@@ -1,23 +1,30 @@
 import React, { useState } from 'react'
 
-const Form = ({addItem}) => {
-  const [newItemName, setNewItemName] = useState("");
+const Form = ({addItem, items}) => {
+
+  const [newItemName, setNewItemName] = useState('');
   
-  const handleSubmit =(e)=>{
+
+  function handleSubmit(e){
     e.preventDefault();
-    if(!newItemName) return;
-    addItem(newItemName);  
-    setNewItemName("");
+    if(!newItemName) return; 
+    addItem(newItemName);
+    setNewItemName('');
   }
+
 
   return (
     <form onSubmit={handleSubmit}>
       <h4>grocery bud</h4>
       <div className='form-control'>
-        <input type="text"  className='form-imput' value={newItemName} onChange={(event)=> setNewItemName(event.target.value) }/>
+        <input 
+         type='text'
+         className='form-control'
+         value={newItemName}
+         onChange={(e)=> setNewItemName(e.target.value)}
+        />
         <button type='submit' className='btn'>add item</button>
       </div>
-
     </form>
   )
 }
